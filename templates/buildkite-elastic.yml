@@ -194,6 +194,8 @@ Resources:
               Service: [ ec2.amazonaws.com ]
             Action: sts:AssumeRole
       Path: /
+      ManagedPolicyArns:
+        - "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser"
 
   IAMPolicies:
     Type: AWS::IAM::Policy

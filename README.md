@@ -84,7 +84,7 @@ unset PASSPHRASE
 rm id_rsa_github*
 ```
 
-For Docker Hub credentials, you can use `DOCKER_HUB_USER`, `DOCKER_HUB_PASSWORD` and `DOCKER_HUB_EMAIL` in your `env` file.
+The VM will try to authenticate to the Amazon Elastic Container Registry in the current AZ. You probably want to make sure that exists.
 
 ## Autoscaling
 
