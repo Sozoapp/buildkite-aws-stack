@@ -42,9 +42,7 @@ if [[ -n "${BUILDKITE_SECRETS_BUCKET:-}" ]] ; then
   fi
 fi
 
-if [[ ! -f ~/.docker/config.json ]]; then
-  eval $(aws ecr get-login --region $(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region))
-fi
+eval $(aws ecr get-login --region $(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region))
 
 if [[ $(docker ps -q | wc -l) -gt 0 ]] ; then
   echo "~~~ Stopping existing :docker: containers"
